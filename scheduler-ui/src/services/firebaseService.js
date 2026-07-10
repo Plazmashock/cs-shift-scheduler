@@ -81,6 +81,11 @@ export async function saveTeamMembers(members) {
  * @returns {Promise<Array>} Array of employee objects
  */
 export async function loadTeamMembers() {
+  // demo: in demo mode, serve fictional employees from a local fixture instead of Firebase
+  if (import.meta.env.VITE_DEMO_MODE === 'true') {
+    const res = await fetch('/demo/employees.json');
+    return res.ok ? res.json() : [];
+  }
   if (!firebaseAvailable) {
     throw new Error('Firebase not initialized - cannot load team members');
   }

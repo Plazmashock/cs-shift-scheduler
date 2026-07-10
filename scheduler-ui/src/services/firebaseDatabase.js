@@ -10,6 +10,8 @@ import { formatDate } from '../utils/dateHelpers';
 let db = null;
 
 async function ensureDb() {
+  // demo: no Firebase in demo mode — callers already handle a null db gracefully
+  if (import.meta.env.VITE_DEMO_MODE === 'true') return null;
   if (db) return db;
   try {
     const { db: database } = await getFirebase();
@@ -61,6 +63,15 @@ export async function saveScheduleToFirebase(weekStart, scheduleData, user = nul
 
 // Load schedule for a week. Returns null if not found or error.
 export async function loadScheduleFromFirebase(weekStart, user = null) {
+  // demo: serve pre-solved schedule fixtures (real CP-SAT output) from local JSON
+  if (import.meta.env.VITE_DEMO_MODE === 'true') {
+    try {
+      const res = await fetch(`/demo/schedule-${weekStart}.json`);
+      return res.ok ? await res.json() : null;
+    } catch {
+      return null;
+    }
+  }
   const cacheKey = `schedule:${weekStart}`;
 
   return withCache(

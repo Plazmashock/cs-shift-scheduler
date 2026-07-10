@@ -33,6 +33,17 @@ export const AuthProvider = ({ children }) => {
   const [adminEmails, setAdminEmails] = useState(new Set(DEFAULT_ADMIN_USERS));
 
   useEffect(() => {
+    // demo: bypass Firebase Auth entirely with a fake admin user (local demo only)
+    if (import.meta.env.VITE_DEMO_MODE === 'true') {
+      setUser({
+        email: 'demo.manager@example.com',
+        displayName: 'Demo Manager',
+        getIdToken: async () => 'demo-token'
+      });
+      setIsAdmin(true);
+      setLoading(false);
+      return;
+    }
     let unsubscribe = null;
     let authInstance = null;
     let googleProvider = null;

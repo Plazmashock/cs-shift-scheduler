@@ -1,0 +1,52 @@
+[
+  {
+    "id": 1,
+    "name": "Nino Beridze",
+    "email": "nino.beridze@example.com"
+  },
+  {
+    "id": 2,
+    "name": "Eka Tsiklauri",
+    "email": "eka.tsiklauri@example.com"
+  },
+  {
+    "id": 3,
+    "name": "Teona Abashidze",
+    "email": "teona.abashidze@example.com"
+  },
+  {
+    "id": 4,
+    "name": "Luka Japaridze",
+    "email": "luka.japaridze@example.com"
+  },
+  {
+    "id": 5,
+    "name": "Sandro Kiknadze",
+    "email": "sandro.kiknadze@example.com"
+  },
+  {
+    "id": 6,
+    "name": "Natia Chikhladze",
+    "email": "natia.chikhladze@example.com"
+  },
+  {
+    "id": 7,
+    "name": "Sopo Machavariani",
+    "email": "sopo.machavariani@example.com"
+  },
+  {
+    "id": 8,
+    "name": "Lika Tsereteli",
+    "email": "lika.tsereteli@example.com"
+  },
+  {
+    "id": 9,
+    "name": "Meri Dolidze",
+    "email": "meri.dolidze@example.com"
+  },
+  {
+    "id": 10,
+    "name": "Anuki Shengelia",
+    "email": "anuki.shengelia@example.com"
+  }
+]

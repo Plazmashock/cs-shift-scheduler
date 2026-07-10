@@ -1,0 +1,408 @@
+{
+  "week_start": "2026-07-06",
+  "status": "optimal",
+  "assignments": [
+    {
+      "employee_id": 1,
+      "employee_name": "Nino Beridze",
+      "date": "2026-07-06",
+      "shift_type": "afternoon",
+      "start_datetime": "2026-07-06T15:00:00+00:00",
+      "end_datetime": "2026-07-07T00:00:00+00:00"
+    },
+    {
+      "employee_id": 1,
+      "employee_name": "Nino Beridze",
+      "date": "2026-07-08",
+      "shift_type": "morning",
+      "start_datetime": "2026-07-08T04:00:00+00:00",
+      "end_datetime": "2026-07-08T13:00:00+00:00"
+    },
+    {
+      "employee_id": 1,
+      "employee_name": "Nino Beridze",
+      "date": "2026-07-09",
+      "shift_type": "afternoon",
+      "start_datetime": "2026-07-09T15:00:00+00:00",
+      "end_datetime": "2026-07-10T00:00:00+00:00"
+    },
+    {
+      "employee_id": 1,
+      "employee_name": "Nino Beridze",
+      "date": "2026-07-10",
+      "shift_type": "night",
+      "start_datetime": "2026-07-10T19:00:00+00:00",
+      "end_datetime": "2026-07-11T04:00:00+00:00"
+    },
+    {
+      "employee_id": 1,
+      "employee_name": "Nino Beridze",
+      "date": "2026-07-12",
+      "shift_type": "day",
+      "start_datetime": "2026-07-12T10:00:00+00:00",
+      "end_datetime": "2026-07-12T19:00:00+00:00"
+    },
+    {
+      "employee_id": 2,
+      "employee_name": "Eka Tsiklauri",
+      "date": "2026-07-06",
+      "shift_type": "day",
+      "start_datetime": "2026-07-06T10:00:00+00:00",
+      "end_datetime": "2026-07-06T19:00:00+00:00"
+    },
+    {
+      "employee_id": 2,
+      "employee_name": "Eka Tsiklauri",
+      "date": "2026-07-07",
+      "shift_type": "day",
+      "start_datetime": "2026-07-07T10:00:00+00:00",
+      "end_datetime": "2026-07-07T19:00:00+00:00"
+    },
+    {
+      "employee_id": 2,
+      "employee_name": "Eka Tsiklauri",
+      "date": "2026-07-08",
+      "shift_type": "afternoon",
+      "start_datetime": "2026-07-08T15:00:00+00:00",
+      "end_datetime": "2026-07-09T00:00:00+00:00"
+    },
+    {
+      "employee_id": 2,
+      "employee_name": "Eka Tsiklauri",
+      "date": "2026-07-10",
+      "shift_type": "morning",
+      "start_datetime": "2026-07-10T04:00:00+00:00",
+      "end_datetime": "2026-07-10T13:00:00+00:00"
+    },
+    {
+      "employee_id": 2,
+      "employee_name": "Eka Tsiklauri",
+      "date": "2026-07-12",
+      "shift_type": "night",
+      "start_datetime": "2026-07-12T19:00:00+00:00",
+      "end_datetime": "2026-07-13T04:00:00+00:00"
+    },
+    {
+      "employee_id": 3,
+      "employee_name": "Teona Abashidze",
+      "date": "2026-07-06",
+      "shift_type": "night",
+      "start_datetime": "2026-07-06T19:00:00+00:00",
+      "end_datetime": "2026-07-07T04:00:00+00:00"
+    },
+    {
+      "employee_id": 3,
+      "employee_name": "Teona Abashidze",
+      "date": "2026-07-08",
+      "shift_type": "day",
+      "start_datetime": "2026-07-08T10:00:00+00:00",
+      "end_datetime": "2026-07-08T19:00:00+00:00"
+    },
+    {
+      "employee_id": 3,
+      "employee_name": "Teona Abashidze",
+      "date": "2026-07-09",
+      "shift_type": "afternoon",
+      "start_datetime": "2026-07-09T15:00:00+00:00",
+      "end_datetime": "2026-07-10T00:00:00+00:00"
+    },
+    {
+      "employee_id": 3,
+      "employee_name": "Teona Abashidze",
+      "date": "2026-07-11",
+      "shift_type": "morning",
+      "start_datetime": "2026-07-11T04:00:00+00:00",
+      "end_datetime": "2026-07-11T13:00:00+00:00"
+    },
+    {
+      "employee_id": 3,
+      "employee_name": "Teona Abashidze",
+      "date": "2026-07-12",
+      "shift_type": "afternoon",
+      "start_datetime": "2026-07-12T15:00:00+00:00",
+      "end_datetime": "2026-07-13T00:00:00+00:00"
+    },
+    {
+      "employee_id": 4,
+      "employee_name": "Luka Japaridze",
+      "date": "2026-07-07",
+      "shift_type": "morning",
+      "start_datetime": "2026-07-07T04:00:00+00:00",
+      "end_datetime": "2026-07-07T13:00:00+00:00"
+    },
+    {
+      "employee_id": 4,
+      "employee_name": "Luka Japaridze",
+      "date": "2026-07-08",
+      "shift_type": "afternoon",
+      "start_datetime": "2026-07-08T15:00:00+00:00",
+      "end_datetime": "2026-07-09T00:00:00+00:00"
+    },
+    {
+      "employee_id": 4,
+      "employee_name": "Luka Japaridze",
+      "date": "2026-07-09",
+      "shift_type": "night",
+      "start_datetime": "2026-07-09T19:00:00+00:00",
+      "end_datetime": "2026-07-10T04:00:00+00:00"
+    },
+    {
+      "employee_id": 4,
+      "employee_name": "Luka Japaridze",
+      "date": "2026-07-11",
+      "shift_type": "day",
+      "start_datetime": "2026-07-11T10:00:00+00:00",
+      "end_datetime": "2026-07-11T19:00:00+00:00"
+    },
+    {
+      "employee_id": 4,
+      "employee_name": "Luka Japaridze",
+      "date": "2026-07-12",
+      "shift_type": "night",
+      "start_datetime": "2026-07-12T19:00:00+00:00",
+      "end_datetime": "2026-07-13T04:00:00+00:00"
+    },
+    {
+      "employee_id": 5,
+      "employee_name": "Sandro Kiknadze",
+      "date": "2026-07-06",
+      "shift_type": "night",
+      "start_datetime": "2026-07-06T19:00:00+00:00",
+      "end_datetime": "2026-07-07T04:00:00+00:00"
+    },
+    {
+      "employee_id": 5,
+      "employee_name": "Sandro Kiknadze",
+      "date": "2026-07-08",
+      "shift_type": "day",
+      "start_datetime": "2026-07-08T10:00:00+00:00",
+      "end_datetime": "2026-07-08T19:00:00+00:00"
+    },
+    {
+      "employee_id": 5,
+      "employee_name": "Sandro Kiknadze",
+      "date": "2026-07-09",
+      "shift_type": "day",
+      "start_datetime": "2026-07-09T10:00:00+00:00",
+      "end_datetime": "2026-07-09T19:00:00+00:00"
+    },
+    {
+      "employee_id": 5,
+      "employee_name": "Sandro Kiknadze",
+      "date": "2026-07-10",
+      "shift_type": "afternoon",
+      "start_datetime": "2026-07-10T15:00:00+00:00",
+      "end_datetime": "2026-07-11T00:00:00+00:00"
+    },
+    {
+      "employee_id": 5,
+      "employee_name": "Sandro Kiknadze",
+      "date": "2026-07-12",
+      "shift_type": "morning",
+      "start_datetime": "2026-07-12T04:00:00+00:00",
+      "end_datetime": "2026-07-12T13:00:00+00:00"
+    },
+    {
+      "employee_id": 6,
+      "employee_name": "Natia Chikhladze",
+      "date": "2026-07-06",
+      "shift_type": "morning",
+      "start_datetime": "2026-07-06T04:00:00+00:00",
+      "end_datetime": "2026-07-06T13:00:00+00:00"
+    },
+    {
+      "employee_id": 6,
+      "employee_name": "Natia Chikhladze",
+      "date": "2026-07-08",
+      "shift_type": "day",
+      "start_datetime": "2026-07-08T10:00:00+00:00",
+      "end_datetime": "2026-07-08T19:00:00+00:00"
+    },
+    {
+      "employee_id": 6,
+      "employee_name": "Natia Chikhladze",
+      "date": "2026-07-09",
+      "shift_type": "afternoon",
+      "start_datetime": "2026-07-09T15:00:00+00:00",
+      "end_datetime": "2026-07-10T00:00:00+00:00"
+    },
+    {
+      "employee_id": 6,
+      "employee_name": "Natia Chikhladze",
+      "date": "2026-07-10",
+      "shift_type": "night",
+      "start_datetime": "2026-07-10T19:00:00+00:00",
+      "end_datetime": "2026-07-11T04:00:00+00:00"
+    },
+    {
+      "employee_id": 6,
+      "employee_name": "Natia Chikhladze",
+      "date": "2026-07-12",
+      "shift_type": "afternoon",
+      "start_datetime": "2026-07-12T15:00:00+00:00",
+      "end_datetime": "2026-07-13T00:00:00+00:00"
+    },
+    {
+      "employee_id": 7,
+      "employee_name": "Sopo Machavariani",
+      "date": "2026-07-06",
+      "shift_type": "afternoon",
+      "start_datetime": "2026-07-06T15:00:00+00:00",
+      "end_datetime": "2026-07-07T00:00:00+00:00"
+    },
+    {
+      "employee_id": 7,
+      "employee_name": "Sopo Machavariani",
+      "date": "2026-07-07",
+      "shift_type": "night",
+      "start_datetime": "2026-07-07T19:00:00+00:00",
+      "end_datetime": "2026-07-08T04:00:00+00:00"
+    },
+    {
+      "employee_id": 7,
+      "employee_name": "Sopo Machavariani",
+      "date": "2026-07-08",
+      "shift_type": "night",
+      "start_datetime": "2026-07-08T19:00:00+00:00",
+      "end_datetime": "2026-07-09T04:00:00+00:00"
+    },
+    {
+      "employee_id": 7,
+      "employee_name": "Sopo Machavariani",
+      "date": "2026-07-10",
+      "shift_type": "day",
+      "start_datetime": "2026-07-10T10:00:00+00:00",
+      "end_datetime": "2026-07-10T19:00:00+00:00"
+    },
+    {
+      "employee_id": 7,
+      "employee_name": "Sopo Machavariani",
+      "date": "2026-07-11",
+      "shift_type": "afternoon",
+      "start_datetime": "2026-07-11T15:00:00+00:00",
+      "end_datetime": "2026-07-12T00:00:00+00:00"
+    },
+    {
+      "employee_id": 8,
+      "employee_name": "Lika Tsereteli",
+      "date": "2026-07-06",
+      "shift_type": "day",
+      "start_datetime": "2026-07-06T10:00:00+00:00",
+      "end_datetime": "2026-07-06T19:00:00+00:00"
+    },
+    {
+      "employee_id": 8,
+      "employee_name": "Lika Tsereteli",
+      "date": "2026-07-08",
+      "shift_type": "afternoon",
+      "start_datetime": "2026-07-08T15:00:00+00:00",
+      "end_datetime": "2026-07-09T00:00:00+00:00"
+    },
+    {
+      "employee_id": 8,
+      "employee_name": "Lika Tsereteli",
+      "date": "2026-07-09",
+      "shift_type": "afternoon",
+      "start_datetime": "2026-07-09T15:00:00+00:00",
+      "end_datetime": "2026-07-10T00:00:00+00:00"
+    },
+    {
+      "employee_id": 8,
+      "employee_name": "Lika Tsereteli",
+      "date": "2026-07-10",
+      "shift_type": "night",
+      "start_datetime": "2026-07-10T19:00:00+00:00",
+      "end_datetime": "2026-07-11T04:00:00+00:00"
+    },
+    {
+      "employee_id": 8,
+      "employee_name": "Lika Tsereteli",
+      "date": "2026-07-12",
+      "shift_type": "day",
+      "start_datetime": "2026-07-12T10:00:00+00:00",
+      "end_datetime": "2026-07-12T19:00:00+00:00"
+    },
+    {
+      "employee_id": 9,
+      "employee_name": "Meri Dolidze",
+      "date": "2026-07-06",
+      "shift_type": "night",
+      "start_datetime": "2026-07-06T19:00:00+00:00",
+      "end_datetime": "2026-07-07T04:00:00+00:00"
+    },
+    {
+      "employee_id": 9,
+      "employee_name": "Meri Dolidze",
+      "date": "2026-07-08",
+      "shift_type": "afternoon",
+      "start_datetime": "2026-07-08T15:00:00+00:00",
+      "end_datetime": "2026-07-09T00:00:00+00:00"
+    },
+    {
+      "employee_id": 9,
+      "employee_name": "Meri Dolidze",
+      "date": "2026-07-09",
+      "shift_type": "afternoon",
+      "start_datetime": "2026-07-09T15:00:00+00:00",
+      "end_datetime": "2026-07-10T00:00:00+00:00"
+    },
+    {
+      "employee_id": 9,
+      "employee_name": "Meri Dolidze",
+      "date": "2026-07-10",
+      "shift_type": "afternoon",
+      "start_datetime": "2026-07-10T15:00:00+00:00",
+      "end_datetime": "2026-07-11T00:00:00+00:00"
+    },
+    {
+      "employee_id": 9,
+      "employee_name": "Meri Dolidze",
+      "date": "2026-07-12",
+      "shift_type": "day",
+      "start_datetime": "2026-07-12T10:00:00+00:00",
+      "end_datetime": "2026-07-12T19:00:00+00:00"
+    },
+    {
+      "employee_id": 10,
+      "employee_name": "Anuki Shengelia",
+      "date": "2026-07-06",
+      "shift_type": "afternoon",
+      "start_datetime": "2026-07-06T15:00:00+00:00",
+      "end_datetime": "2026-07-07T00:00:00+00:00"
+    },
+    {
+      "employee_id": 10,
+      "employee_name": "Anuki Shengelia",
+      "date": "2026-07-07",
+      "shift_type": "afternoon",
+      "start_datetime": "2026-07-07T15:00:00+00:00",
+      "end_datetime": "2026-07-08T00:00:00+00:00"
+    },
+    {
+      "employee_id": 10,
+      "employee_name": "Anuki Shengelia",
+      "date": "2026-07-09",
+      "shift_type": "morning",
+      "start_datetime": "2026-07-09T04:00:00+00:00",
+      "end_datetime": "2026-07-09T13:00:00+00:00"
+    },
+    {
+      "employee_id": 10,
+      "employee_name": "Anuki Shengelia",
+      "date": "2026-07-10",
+      "shift_type": "day",
+      "start_datetime": "2026-07-10T10:00:00+00:00",
+      "end_datetime": "2026-07-10T19:00:00+00:00"
+    },
+    {
+      "employee_id": 10,
+      "employee_name": "Anuki Shengelia",
+      "date": "2026-07-11",
+      "shift_type": "night",
+      "start_datetime": "2026-07-11T19:00:00+00:00",
+      "end_datetime": "2026-07-12T04:00:00+00:00"
+    }
+  ],
+  "savedAt": "2026-07-06T09:00:00.000Z",
+  "savedBy": "demo@example.com"
+}
