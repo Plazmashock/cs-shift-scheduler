@@ -4,7 +4,7 @@ Auto-generates 24/7 shift rosters for a customer support team using constraint o
 
 > **Public-safe copy.** This is a sanitized copy of an internal production tool. Employee names are fictional, credentials are placeholders, and real data is replaced with demo fixtures. The original runs in production daily.
 
-**[Live demo → io-scheduler-demo.web.app](https://io-scheduler-demo.web.app)** — no login needed, demo mode with a fictional team.
+**[Live demo → io-scheduler-demo.web.app](https://io-scheduler-demo.web.app)** — no login needed, demo mode with a fictional team. "Generate Shift" in the demo cycles through pre-computed results from the real OR-Tools solver (the solver backend itself is not deployed for the demo).
 
 ![Weekly schedule grid — real CP-SAT solver output for a fictional team](docs/schedule-grid.png)
 

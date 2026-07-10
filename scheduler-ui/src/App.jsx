@@ -138,6 +138,9 @@ export default function App() {
 
   // State management
   const [weekStart, setWeekStart] = useState(() => {
+    // demo: always land on the week the pre-computed solver fixtures cover,
+    // ignoring persisted lastWeek and the current date
+    if (import.meta.env.VITE_DEMO_MODE === 'true') return new Date(2026, 6, 6);
     // Try to restore last week from preferences, otherwise use current week
     if (preferences.lastWeek) {
       try {
@@ -290,11 +293,13 @@ export default function App() {
     // Show toast briefly when a schedule is generated successfully
     if (scheduleData?.status && scheduleData.status !== 'infeasible') {
       setShowGenerateToast(true);
-      const t = setTimeout(() => setShowGenerateToast(false), 4000);
+      // demo: keep the toast up longer so the demo disclaimer is readable
+      const t = setTimeout(() => setShowGenerateToast(false), scheduleData?.demo ? 9000 : 4000);
       return () => clearTimeout(t);
     }
     return undefined;
-  }, [scheduleData?.status]);
+    // demo: demo_variant changes on every demo generation so the toast re-fires
+  }, [scheduleData?.status, scheduleData?.demo_variant]);
 
   // Check for mobile viewport
   useEffect(() => {
@@ -2430,6 +2435,12 @@ export default function App() {
                       {scheduleData.assignments?.length || 0} shifts • {scheduleData.solve_time ? `${scheduleData.solve_time}s` : '—'}
                       {scheduleData.status === 'greedy_fallback' && ' • fallback'}
                     </div>
+                    {/* demo: honest label — result is real solver output, served statically */}
+                    {scheduleData.demo && (
+                      <div className="text-xs text-amber-700 mt-1 font-medium">
+                        Demo: pre-computed result from the real OR-Tools solver — the live backend is not deployed in this demo.
+                      </div>
+                    )}
                   </div>
                   <button
                     onClick={() => setShowGenerateToast(false)}

@@ -1849,7 +1849,6 @@ export default function SettingsTab({ isAdmin, employees: initialEmployees = [] 
             </button>
           </div>
         </div>
-      )}
 
       {/* Messages */}
       {message && (

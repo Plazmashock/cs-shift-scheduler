@@ -69,6 +69,31 @@ async function getAuthHeaders(getIdToken) {
   return headers;
 }
 
+// demo: the static demo has no backend. "Generate" serves pre-computed rosters
+// produced by the real OR-Tools CP-SAT solver (see public/demo/), cycling
+// v1 -> v2 -> v3 -> v1 on each click so the result visibly changes.
+const DEMO_MODE = import.meta.env.VITE_DEMO_MODE === 'true';
+const DEMO_VARIANT_SUFFIXES = ['', '-v2', '-v3'];
+let demoVariantIdx = 0;
+
+// demo: throw a clean, user-facing error for backend-only actions
+function demoDisabled(action) {
+  throw new Error(`${action} is disabled in this demo — the live backend is not deployed.`);
+}
+
+// demo: serve the next pre-solved fixture after a short "solving" pause
+async function generateScheduleDemo(spec) {
+  await new Promise((resolve) => setTimeout(resolve, 1500));
+  demoVariantIdx = (demoVariantIdx + 1) % DEMO_VARIANT_SUFFIXES.length;
+  const suffix = DEMO_VARIANT_SUFFIXES[demoVariantIdx];
+  const res = await fetch(`/demo/schedule-${spec.week_start}${suffix}.json`);
+  if (!res.ok) {
+    throw new Error('This demo only includes pre-computed schedules for the week of Jul 6, 2026. Pick that week and try again.');
+  }
+  const data = await res.json();
+  return { ...data, demo: true, demo_variant: demoVariantIdx };
+}
+
 /**
  * Generate a new schedule from the backend
  * @param {Object} spec - Schedule specification
@@ -79,6 +104,7 @@ async function getAuthHeaders(getIdToken) {
  * @returns {Promise<Object>} Schedule response with assignments and summary
  */
 export async function generateSchedule(spec, getIdToken) {
+  if (DEMO_MODE) return generateScheduleDemo(spec); // demo: pre-computed real solver output
   try {
     const headers = await getAuthHeaders(getIdToken);
     const response = await fetch(`${API_BASE_URL}/api/generate-schedule`, {
@@ -139,6 +165,7 @@ export async function testApiConnection() {
  * @returns {Promise<Blob>} CSV file blob
  */
 export async function exportScheduleCSV(scheduleData, getIdToken) {
+  if (DEMO_MODE) demoDisabled('CSV export'); // demo: needs the backend
   try {
     const headers = await getAuthHeaders(getIdToken);
     const response = await fetch(`${API_BASE_URL}/api/export-csv`, {
@@ -167,6 +194,7 @@ export async function exportScheduleCSV(scheduleData, getIdToken) {
  * @returns {Promise<Object>} Result with rows_updated, columns used, etc.
  */
 export async function exportToSheets({ start_date, end_date } = {}, getIdToken) {
+  if (DEMO_MODE) demoDisabled('Google Sheets export'); // demo: needs the backend
   try {
     const headers = await getAuthHeaders(getIdToken);
     const body = {};
@@ -198,6 +226,7 @@ export async function exportToSheets({ start_date, end_date } = {}, getIdToken) 
  * @param {Function} getIdToken - Function to get Firebase ID token
  */
 export async function notifySlack(data, getIdToken) {
+  if (DEMO_MODE) demoDisabled('Slack notification'); // demo: needs the backend
   try {
     const headers = await getAuthHeaders(getIdToken);
     const response = await fetch(`${API_BASE_URL}/api/notify-slack`, {
@@ -227,6 +256,7 @@ export async function notifySlack(data, getIdToken) {
  * @returns {Promise<Object>} Result with sent_to array and message_preview
  */
 export async function sendDailyShiftNotification({ test_mode = false, date = null } = {}, getIdToken) {
+  if (DEMO_MODE) demoDisabled('Slack notification'); // demo: needs the backend
   try {
     const headers = await getAuthHeaders(getIdToken);
     const response = await fetch(`${API_BASE_URL}/api/send-daily-shifts`, {
@@ -248,6 +278,7 @@ export async function sendDailyShiftNotification({ test_mode = false, date = nul
 }
 
 export async function notifyScheduleReady(weekLabel, getIdToken) {
+  if (DEMO_MODE) demoDisabled('Employee notification'); // demo: needs the backend
   const headers = await getAuthHeaders(getIdToken);
   const response = await fetch(`${API_BASE_URL}/api/notify-schedule-ready`, {
     method: 'POST',
@@ -267,6 +298,7 @@ export async function notifyScheduleReady(weekLabel, getIdToken) {
  * @returns {Promise<Blob>} JSON file blob
  */
 export async function exportScheduleJSON(scheduleData, getIdToken) {
+  if (DEMO_MODE) demoDisabled('JSON export'); // demo: needs the backend
   try {
     const headers = await getAuthHeaders(getIdToken);
     const response = await fetch(`${API_BASE_URL}/api/export-json`, {

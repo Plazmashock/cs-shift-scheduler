@@ -27,6 +27,8 @@ async function ensureDb() {
 
 // Save or overwrite schedule for a week. If user provided, store under their uid for isolation.
 export async function saveScheduleToFirebase(weekStart, scheduleData, user = null) {
+  // demo: no cloud persistence — pretend success so no "cloud save failed" warning pops up
+  if (import.meta.env.VITE_DEMO_MODE === 'true') return { success: true };
   const database = await ensureDb();
   if (!database) return null;
   try {
