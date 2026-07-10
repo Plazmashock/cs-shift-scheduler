@@ -1,0 +1,9 @@
+employee_id,employee_name,date,shift_type,start_datetime,end_datetime,leave_type,leave_hours,timeframe,custom_start,custom_end,notes
+1,"Nino Beridze",2026-01-26,morning,2026-01-26T04:00:00+00:00,2026-01-26T13:00:00+00:00,,,,,,"demo data — fake names and shifts"
+2,"Eka Tsiklauri",2026-01-26,day,2026-01-26T10:00:00+00:00,2026-01-26T19:00:00+00:00,,,,,,""
+3,"Teona Abashidze",2026-01-26,afternoon,2026-01-26T15:00:00+00:00,2026-01-27T00:00:00+00:00,,,,,,""
+4,"Luka Japaridze",2026-01-26,night,2026-01-26T19:00:00+00:00,2026-01-27T04:00:00+00:00,,,,,,""
+5,"Tako Kvirikashvili",2026-01-26,,,,vacation,8,full_day,,,""
+6,"Sandro Kiknadze",2026-01-27,morning,2026-01-27T04:00:00+00:00,2026-01-27T13:00:00+00:00,,,,,,""
+7,"Natia Chikhladze",2026-01-27,day,2026-01-27T10:00:00+00:00,2026-01-27T19:00:00+00:00,,,,,,""
+8,"Gvantsa Barbakadze",2026-01-27,night,2026-01-27T19:00:00+00:00,2026-01-28T04:00:00+00:00,,,,,,""

@@ -1,0 +1,555 @@
+/**
+ * Global styles and design system
+ * Base styles, CSS variables, and component overrides
+ */
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/* CSS Variables for theming */
+:root {
+  /* Shift type colors */
+  --shift-morning: #f97316;
+  --shift-day: #3b82f6;
+  --shift-afternoon: #8b5cf6;
+  --shift-night: #4f46e5;
+  
+  /* UI colors */
+  --color-primary: #3b82f6;
+  --color-secondary: #6b7280;
+  --color-success: #10b981;
+  --color-warning: #f59e0b;
+  --color-error: #ef4444;
+  
+  /* Spacing */
+  --spacing-xs: 0.25rem;
+  --spacing-sm: 0.5rem;
+  --spacing-md: 1rem;
+  --spacing-lg: 1.5rem;
+  --spacing-xl: 2rem;
+  
+  /* Border radius */
+  --radius-sm: 0.25rem;
+  --radius-md: 0.375rem;
+  --radius-lg: 0.5rem;
+  
+  /* Shadows */
+  --shadow-sm: 0 1px 2px 0 rgb(0 0 0 / 0.05);
+  --shadow-md: 0 4px 6px -1px rgb(0 0 0 / 0.1), 0 2px 4px -2px rgb(0 0 0 / 0.1);
+  --shadow-lg: 0 10px 15px -3px rgb(0 0 0 / 0.1), 0 4px 6px -4px rgb(0 0 0 / 0.1);
+}
+
+/* Base styles */
+@layer base {
+  /* Font loading optimization */
+  html {
+    font-family: 'Inter', system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+  }
+
+  /* Focus styles for accessibility */
+  *:focus {
+    outline: 2px solid transparent;
+    outline-offset: 2px;
+  }
+
+  /* Custom focus ring */
+  .focus-ring:focus {
+    @apply ring-2 ring-blue-500 ring-offset-2;
+  }
+
+  /* Smooth scrolling */
+  html {
+    scroll-behavior: smooth;
+  }
+
+  /* Remove default button styles */
+  button {
+    @apply focus:outline-none;
+  }
+
+  /* Input styles */
+  input[type="text"],
+  input[type="email"],
+  input[type="password"],
+  select,
+  textarea {
+    @apply focus:ring-2 focus:ring-blue-500 focus:border-blue-500;
+  }
+}
+
+/* Component layer */
+@layer components {
+  /* Button variants */
+  .btn-primary {
+    @apply bg-blue-600 text-white hover:bg-blue-700 focus:ring-2 focus:ring-blue-500 focus:ring-offset-2 px-4 py-2 rounded-md transition-colors duration-200;
+  }
+
+  .btn-secondary {
+    @apply bg-gray-100 text-gray-700 hover:bg-gray-200 focus:ring-2 focus:ring-gray-500 focus:ring-offset-2 px-4 py-2 rounded-md transition-colors duration-200;
+  }
+
+  .btn-danger {
+    @apply bg-red-600 text-white hover:bg-red-700 focus:ring-2 focus:ring-red-500 focus:ring-offset-2 px-4 py-2 rounded-md transition-colors duration-200;
+  }
+
+  /* Card styles */
+  .card {
+    @apply bg-white border border-gray-200 rounded-lg shadow-sm;
+  }
+
+  .card-header {
+    @apply px-4 py-3 border-b border-gray-200 bg-gray-50;
+  }
+
+  .card-body {
+    @apply p-4;
+  }
+
+  /* Shift card styles */
+  .shift-card {
+    @apply relative border-l-4 rounded-r-md p-3 transition-all duration-200 cursor-pointer;
+  }
+
+  .shift-card:hover {
+    @apply transform -translate-y-1 shadow-md;
+  }
+
+  /* Calendar grid */
+  .calendar-grid {
+    @apply grid grid-cols-7 gap-1;
+  }
+
+  .calendar-day {
+    @apply h-8 w-8 text-xs rounded-md transition-all duration-150 focus:outline-none focus:ring-2 focus:ring-blue-500 focus:ring-offset-1;
+  }
+
+  /* Employee avatar */
+  .employee-avatar {
+    @apply w-8 h-8 text-white text-xs font-semibold rounded-full flex items-center justify-center flex-shrink-0;
+  }
+
+  /* Loading states */
+  .loading-spinner {
+    @apply animate-spin rounded-full border-2 border-gray-300 border-t-blue-600;
+  }
+
+  /* Status indicators */
+  .status-success {
+    @apply bg-green-50 border-green-200 text-green-800;
+  }
+
+  .status-warning {
+    @apply bg-yellow-50 border-yellow-200 text-yellow-800;
+  }
+
+  .status-error {
+    @apply bg-red-50 border-red-200 text-red-800;
+  }
+
+  /* Mobile responsive utilities */
+  .mobile-stack {
+    @apply flex flex-col space-y-4;
+  }
+
+  @screen md {
+    .mobile-stack {
+      @apply flex-row space-y-0 space-x-4;
+    }
+  }
+}
+
+/* Utility layer */
+@layer utilities {
+  /* Custom animations */
+  .animate-fade-in {
+    animation: fadeIn 0.3s ease-out;
+  }
+
+  .animate-slide-up {
+    animation: slideUp 0.3s ease-out;
+  }
+
+  .animate-bounce-subtle {
+    animation: bounceSubtle 0.6s ease-out;
+  }
+
+  /* Text truncation with tooltip */
+  .text-truncate-tooltip {
+    @apply truncate;
+    cursor: help;
+  }
+
+  /* Scrollbar styling */
+  .custom-scrollbar {
+    scrollbar-width: thin;
+    scrollbar-color: rgb(156 163 175) transparent;
+  }
+
+  .custom-scrollbar::-webkit-scrollbar {
+    width: 6px;
+    height: 6px;
+  }
+
+  .custom-scrollbar::-webkit-scrollbar-track {
+    background: transparent;
+  }
+
+  .custom-scrollbar::-webkit-scrollbar-thumb {
+    background-color: rgb(156 163 175);
+    border-radius: 3px;
+  }
+
+  .custom-scrollbar::-webkit-scrollbar-thumb:hover {
+    background-color: rgb(107 114 128);
+  }
+
+  /* Print styles */
+  @media print {
+    .no-print {
+      display: none !important;
+    }
+    
+    .print-full-width {
+      width: 100% !important;
+      margin: 0 !important;
+    }
+  }
+
+  /* High contrast mode */
+  @media (prefers-contrast: high) {
+    .shift-card {
+      border-width: 2px;
+    }
+    
+    .btn-primary,
+    .btn-secondary,
+    .btn-danger {
+      border: 2px solid currentColor;
+    }
+  }
+
+  /* Reduced motion */
+  @media (prefers-reduced-motion: reduce) {
+    .animate-fade-in,
+    .animate-slide-up,
+    .animate-bounce-subtle {
+      animation: none;
+    }
+    
+    .transition-all,
+    .transition-colors,
+    .transition-transform {
+      transition: none;
+    }
+  }
+
+  /* Dark mode preparation (for future enhancement) */
+  @media (prefers-color-scheme: dark) {
+    :root {
+      --color-background: #1f2937;
+      --color-surface: #374151;
+      --color-text: #f9fafb;
+    }
+  }
+}
+
+/* Keyframe animations */
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+
+@keyframes slideUp {
+  from {
+    transform: translateY(10px);
+    opacity: 0;
+  }
+  to {
+    transform: translateY(0);
+    opacity: 1;
+  }
+}
+
+@keyframes bounceSubtle {
+  0%, 20%, 50%, 80%, 100% {
+    transform: translateY(0);
+  }
+  40% {
+    transform: translateY(-4px);
+  }
+  60% {
+    transform: translateY(-2px);
+  }
+}
+
+/* ============================================================
+   DARK MODE OVERRIDES
+   Activated by adding `dark` class to <html>.
+   Intentionally placed outside @layer blocks so these rules
+   beat Tailwind utility classes (CSS Cascade Layers rule:
+   non-layered styles win over @layer utilities at equal
+   or lower specificity).
+   ============================================================ */
+
+/* -- Dark palette tokens ------------------------------------ */
+html.dark {
+  color-scheme: dark;
+
+  /* Surface hierarchy (lightest page → darker grid → lighter cards) */
+  --dm-page:       #212528;  /* outermost page background – lighter dark gray  */
+  --dm-surface:    #181b1d;  /* header, grid containers, modals – darker       */
+  --dm-surface-2:  #1a1e24;  /* table rows, grid header row – between the two  */
+  --dm-card:       #282c2f;  /* shift cards – lighter than grid so they pop    */
+  --dm-hover:      #252b33;  /* hovered shift card                             */
+
+  /* Borders – intentionally subtle */
+  --dm-border:     rgba(255,255,255,0.08);  /* dividers, table lines */
+  --dm-border-mid: rgba(255,255,255,0.13);  /* slightly stronger     */
+
+  /* Text */
+  --dm-text-1: #e2e8f0;   /* primary text   */
+  --dm-text-2: #94a3b8;   /* secondary text */
+  --dm-text-3: #64748b;   /* muted / placeholder */
+}
+
+/* -- Base ---------------------------------------------------- */
+.dark body {
+  background-color: var(--dm-page);
+  color: var(--dm-text-1);
+}
+
+/* -- Neutral backgrounds ------------------------------------ */
+/* bg-gray-100 = outermost page wrapper (min-h-screen bg-gray-100) */
+.dark .bg-gray-100 { background-color: var(--dm-page); }
+/* bg-white = header, panels, modals, card containers */
+.dark .bg-white    { background-color: var(--dm-surface); }
+/* bg-gray-50 = secondary surfaces: table header, footer bars */
+.dark .bg-gray-50  { background-color: var(--dm-surface-2); }
+.dark .bg-gray-200 { background-color: var(--dm-surface-2); }
+
+/* -- Neutral hover backgrounds ------------------------------ */
+.dark .hover\:bg-white:hover      { background-color: var(--dm-surface-2); }
+.dark .hover\:bg-gray-50:hover    { background-color: var(--dm-surface-2); }
+.dark .hover\:bg-gray-100:hover   { background-color: var(--dm-surface-2); }
+.dark .hover\:bg-gray-200:hover   { background-color: #2a2f36; }
+
+/* -- Neutral text ------------------------------------------- */
+.dark .text-gray-900 { color: var(--dm-text-1); }
+.dark .text-gray-800 { color: var(--dm-text-1); }
+.dark .text-gray-700 { color: #cbd5e1; }
+.dark .text-gray-600 { color: var(--dm-text-2); }
+.dark .text-gray-500 { color: var(--dm-text-3); }
+.dark .text-gray-400 { color: var(--dm-text-3); }
+
+/* -- Neutral hover text ------------------------------------- */
+.dark .hover\:text-gray-700:hover { color: #cbd5e1; }
+.dark .hover\:text-gray-900:hover { color: var(--dm-text-1); }
+
+/* -- Neutral borders (subtle, non-dominant) ----------------- */
+.dark .border-gray-100 { border-color: var(--dm-border); }
+.dark .border-gray-200 { border-color: var(--dm-border); }
+.dark .border-gray-300 { border-color: var(--dm-border-mid); }
+
+/* -- Accent text (legible on dark surfaces) ----------------- */
+.dark .text-blue-600   { color: #60a5fa; }
+.dark .text-blue-700   { color: #93c5fd; }
+.dark .text-blue-800   { color: #bfdbfe; }
+.dark .text-blue-900   { color: #dbeafe; }
+.dark .text-red-600    { color: #f87171; }
+.dark .text-red-700    { color: #fca5a5; }
+.dark .text-red-800    { color: #fecaca; }
+.dark .text-green-600  { color: #34d399; }
+.dark .text-green-700  { color: #6ee7b7; }
+.dark .text-green-800  { color: #a7f3d0; }
+.dark .text-yellow-600 { color: #fbbf24; }
+.dark .text-yellow-700 { color: #fcd34d; }
+.dark .text-yellow-800 { color: #fde68a; }
+.dark .text-amber-700  { color: #fcd34d; }
+.dark .text-amber-800  { color: #fde68a; }
+.dark .text-amber-900  { color: #fef3c7; }
+.dark .text-purple-600 { color: #c084fc; }
+.dark .text-purple-700 { color: #c4b5fd; }
+.dark .text-purple-800 { color: #ddd6fe; }
+.dark .text-purple-900 { color: #ede9fe; }
+.dark .text-orange-700 { color: #fdba74; }
+.dark .text-orange-800 { color: #fed7aa; }
+
+/* -- Soft accent BACKGROUNDS (–50 tints) ------------------- */
+/* Info / warning / error banners only – NOT shift card fills */
+.dark .bg-blue-50    { background-color: rgba( 59, 130, 246, 0.10); }
+.dark .bg-red-50     { background-color: rgba(239,  68,  68, 0.10); }
+.dark .bg-green-50   { background-color: rgba( 16, 185, 129, 0.10); }
+.dark .bg-yellow-50  { background-color: rgba(245, 158,  11, 0.10); }
+.dark .bg-amber-50   { background-color: rgba(245, 158,  11, 0.10); }
+.dark .bg-orange-50  { background-color: rgba(249, 115,  22, 0.10); }
+.dark .bg-purple-50  { background-color: rgba(139,  92, 246, 0.10); }
+
+/* -- Soft accent BORDERS ------------------------------------ */
+.dark .border-blue-200   { border-color: rgba( 59, 130, 246, 0.25); }
+.dark .border-blue-300   { border-color: rgba( 59, 130, 246, 0.40); }
+.dark .border-red-200    { border-color: rgba(239,  68,  68, 0.25); }
+.dark .border-red-300    { border-color: rgba(239,  68,  68, 0.40); }
+.dark .border-green-200  { border-color: rgba( 16, 185, 129, 0.25); }
+.dark .border-green-300  { border-color: rgba( 16, 185, 129, 0.40); }
+.dark .border-yellow-200 { border-color: rgba(245, 158,  11, 0.25); }
+.dark .border-yellow-300 { border-color: rgba(245, 158,  11, 0.40); }
+.dark .border-amber-200  { border-color: rgba(245, 158,  11, 0.25); }
+.dark .border-purple-200 { border-color: rgba(139,  92, 246, 0.25); }
+
+/* -- Form inputs -------------------------------------------- */
+.dark input[type="text"],
+.dark input[type="email"],
+.dark input[type="date"],
+.dark input[type="number"],
+.dark input[type="time"],
+.dark input[type="search"],
+.dark input[type="password"],
+.dark select,
+.dark textarea {
+  background-color: var(--dm-surface-2);
+  color: var(--dm-text-1);
+  border-color: var(--dm-border-mid);
+}
+
+.dark input::placeholder,
+.dark textarea::placeholder {
+  color: var(--dm-text-3);
+}
+
+.dark select option {
+  background-color: var(--dm-surface-2);
+  color: var(--dm-text-1);
+}
+
+/* -- Scrollbar (dark surfaces) ------------------------------ */
+.dark .custom-scrollbar {
+  scrollbar-color: #2a2f36 transparent;
+}
+
+.dark .custom-scrollbar::-webkit-scrollbar-thumb {
+  background-color: #2a2f36;
+}
+
+/* -- Red hover in bulk-delete mode -------------------------- */
+.dark .hover\:bg-red-200:hover { background-color: rgba(239, 68, 68, 0.20); }
+
+/* -- Focus ring offset on dark surfaces --------------------- */
+.dark .focus\:ring-offset-white:focus   { --tw-ring-offset-color: var(--dm-surface); }
+.dark .focus\:ring-offset-gray-50:focus  { --tw-ring-offset-color: var(--dm-page); }
+
+/* -- Holiday cell backgrounds (amber/yellow tints) ---------- */
+/* WeekGrid column headers, MyPage calendar cells */
+.dark .bg-amber-100 { background-color: rgba(245, 158,  11, 0.14); }
+.dark .bg-yellow-50 { background-color: rgba(234, 179,   8, 0.10); }
+.dark .bg-yellow-100 { background-color: rgba(234, 179,   8, 0.14); }
+.dark .border-yellow-300 { border-color: rgba(234, 179,   8, 0.30); }
+.dark .border-yellow-400 { border-color: rgba(234, 179,   8, 0.40); }
+/* Fractional-opacity amber variants used in grid data cells  */
+.dark .bg-amber-50\/70 { background-color: rgba(245, 158, 11, 0.08); }
+.dark .bg-amber-50\/30 { background-color: rgba(245, 158, 11, 0.05); }
+
+/* -- Selected-row / drop-target highlight ------------------- */
+.dark .bg-blue-100 { background-color: rgba( 59, 130, 246, 0.12); }
+
+/* -- –100 accent backgrounds (section headers, badges) ------ */
+.dark .bg-green-100  { background-color: rgba( 16, 185, 129, 0.14); }
+.dark .bg-red-100    { background-color: rgba(239,  68,  68, 0.14); }
+
+/* -- –200 accent backgrounds (pill chips inside headers) ---- */
+.dark .bg-green-200  { background-color: rgba( 16, 185, 129, 0.22); }
+.dark .bg-amber-200  { background-color: rgba(245, 158,  11, 0.22); }
+.dark .bg-yellow-200 { background-color: rgba(234, 179,   8, 0.22); }
+
+/* -- Semi-transparent white sub-panels inside cards --------- */
+.dark .bg-white\/50  { background-color: rgba(255, 255, 255, 0.04); }
+
+/* -- Gradient card dark overrides (RequestTab pastel cards) - */
+/* Override the Tailwind gradient CSS-variable so the          */
+/* `bg-gradient-to-r from-green-50 to-emerald-50` cards       */
+/* render as dark tints instead of pastel backgrounds.         */
+.dark .from-green-50  {
+  --tw-gradient-from: rgba( 16, 185, 129, 0.12);
+  --tw-gradient-stops: var(--tw-gradient-from), var(--tw-gradient-to, rgba(16,185,129,0));
+}
+.dark .to-emerald-50  { --tw-gradient-to: rgba(  5, 150, 105, 0.06); }
+.dark .from-yellow-50 {
+  --tw-gradient-from: rgba(245, 158,  11, 0.12);
+  --tw-gradient-stops: var(--tw-gradient-from), var(--tw-gradient-to, rgba(245,158,11,0));
+}
+.dark .to-amber-50    { --tw-gradient-to: rgba(245, 158,  11, 0.06); }
+
+/* -- Missing text-900 accent shades ------------------------- */
+.dark .text-green-900  { color: #d1fae5; }
+.dark .text-yellow-900 { color: #fef3c7; }
+
+/* -- Indigo accent (DataTab "Active Employees" value) -------- */
+.dark .text-indigo-600 { color: #818cf8; }
+.dark .text-indigo-700 { color: #a5b4fc; }
+
+/* -- Employee Hours Breakdown table – row separators ---------- */
+/* `divide-gray-200` on tbody generates border-color on each row.
+   We override it here to a visible grey instead of the near-
+   invisible rgba(255,255,255,0.08) that the global rule produces. */
+.dark .dark-table-rows > :not([hidden]) ~ :not([hidden]) {
+  border-color: #2e333b;
+}
+
+/* -- Add New Shift modal · Shift Type card grid -------------- */
+/* Scoped to .shift-type-grid so light-mode cards are untouched */
+
+/* Unselected: neutral dark base, subtle border */
+.dark .shift-type-grid button {
+  background-color: #1e2228 !important;
+  border-color: rgba(255, 255, 255, 0.10) !important;
+  box-shadow: none !important;
+}
+
+/* Hover: slightly lifted surface */
+.dark .shift-type-grid button:hover {
+  background-color: #252b33 !important;
+  border-color: rgba(255, 255, 255, 0.22) !important;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.45) !important;
+}
+
+/* Selected: single consistent blue accent */
+.dark .shift-type-grid button.shift-selected {
+  background-color: #1d2d45 !important;
+  border-color: rgba(96, 165, 250, 0.70) !important;   /* blue-400 */
+  box-shadow: 0 0 0 1px rgba(96, 165, 250, 0.18) !important;
+}
+
+/* Selected + hovered */
+.dark .shift-type-grid button.shift-selected:hover {
+  background-color: #213353 !important;
+  border-color: rgba(147, 197, 253, 0.80) !important;  /* blue-300 */
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.45), 0 0 0 1px rgba(96, 165, 250, 0.25) !important;
+}
+
+/* Accessibility enhancements */
+/* High contrast focus indicators */
+@media (prefers-contrast: high) {
+  *:focus {
+    outline: 3px solid;
+    outline-offset: 2px;
+  }
+}
+
+/* Screen reader only content */
+.sr-only {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  padding: 0;
+  margin: -1px;
+  overflow: hidden;
+  clip: rect(0, 0, 0, 0);
+  white-space: nowrap;
+  border: 0;
+}

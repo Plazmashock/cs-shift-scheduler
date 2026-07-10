@@ -1,0 +1,34 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+  <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+  <link rel="icon" type="image/png" href="/favicon.png" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>CS Scheduler - Customer Support Shift Scheduler</title>
+    <meta name="description" content="24/7 Customer Support Shift Scheduler with constraint-based optimization" />
+    
+    <!-- Font loading optimization -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+  </head>
+  <body>
+    <div id="root"></div>
+    <!-- Set API base to localhost during local development to avoid calling production Cloud Run -->
+    <script>
+      (function(){
+        try {
+          var host = window.location.hostname;
+          if (host === 'localhost' || host === '127.0.0.1') {
+            window.__API_BASE_URL__ = 'http://localhost:8000';
+            console.debug('Runtime override: API base set to', window.__API_BASE_URL__);
+          }
+        } catch (e) {
+          // ignore
+        }
+      })();
+    </script>
+    <script type="module" src="/src/main.jsx"></script>
+  </body>
+</html>

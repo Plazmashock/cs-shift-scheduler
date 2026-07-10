@@ -1,0 +1,46 @@
+{
+  "rules": {
+    ".read": "auth != null",
+    ".write": "auth != null",
+    
+    "schedules": {
+      ".read": true,
+      ".write": "auth != null",
+      "$weekStart": {
+        "assignments": {
+          ".read": true,
+          ".write": "auth != null"
+        },
+        "leaves": {
+          ".read": true,
+          ".write": "auth != null"
+        }
+      }
+    },
+    
+    "teamMembers": {
+      ".read": true,
+      ".write": "auth != null"
+    },
+    
+    "shiftSwapRequests": {
+      ".read": "auth != null",
+      ".write": "auth != null"
+    },
+    
+    "shiftSettings": {
+      ".read": "auth != null",
+      ".write": "auth != null"
+    },
+    
+    "admin-emails": {
+      ".read": "auth != null",
+      ".write": "auth != null"
+    },
+    
+    "user-preferences": {
+      ".read": "auth != null",
+      ".write": "auth != null"
+    }
+  }
+}
